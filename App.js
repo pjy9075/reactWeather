@@ -1,11 +1,22 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import { StyleSheet, Text, View ,Image, ActivityIndicator} from 'react-native';
 
-export default class App extends React.Component {
+export default class App extends Component {
+  
+  state = {
+    isLoaded:false
+  };
+
   render() {
+    const{isLoaded}=this.state;
     return (
-      <View style={styles.container}>
-        <Text>I love you </Text>
+      <View >
+        {isLoaded ? null : ( 
+        <View>
+          <Text> Getting your Weather :)  </Text>
+          </View>
+        )}
+              
       </View>
     );
   }
